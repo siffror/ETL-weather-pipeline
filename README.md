@@ -30,7 +30,8 @@ test_load.py # Testar att spara till databas
 
 
 ---
-
+API_KEY=din_api_nyckel_här
+---
 ## ⚙️ Krav
 
 - Python 3.10+
