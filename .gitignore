@@ -1,5 +1,18 @@
+# Ignorera hemliga filer
 .env
+
+# Ignorera SQLite-databas
 *.db
+
+# Ignorera cachefiler och kompilerade Python-filer
 __pycache__/
 *.pyc
+*.pyo
+
+# Ignorera loggfiler
+*.log
 log.txt
+
+# Ignorera systemfiler (Windows/macOS)
+.DS_Store
+Thumbs.db
