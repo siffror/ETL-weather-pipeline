@@ -43,8 +43,7 @@ ETL-weather-pipeline/
 ### 1. Klona repot
 
 ```bash
-git clone https://github.com/ditt-användarnamn/ETL-weather-pipeline.git
-cd ETL-weather-pipeline
+git clone https://github.com/siffror/ETL-weather-pipeline.git
 ```
 
 ### 2. Skapa `.env`-fil
