@@ -104,7 +104,69 @@ Fyll i följande:
 
 ---
 
+### 🔑 Skaffa API-nyckel
+
+För att kunna hämta väderdata behöver du en API-nyckel från [OpenWeatherMap](https://home.openweathermap.org/).
+
+1. Skapa ett konto (gratis)
+2. Logga in och skapa en API-nyckel
+3. Spara den i en `.env`-fil i projektmappen:
+
+```env
+API_KEY=din_api_nyckel
+
+```
+
+## 🧠 Om projektet
+
+Det här projektet är ett automatiserat ETL-flöde byggt i Python. Flödet hämtar väderdata från OpenWeatherMap API, transformerar datan till en ren struktur och sparar den i en lokal SQLite-databas.
+
+Syftet är att visa hur man bygger ett stabilt och återanvändbart ETL-flöde i Python, med fokus på:
+
+Struktur (moduluppdelning: extract, transform, load)
+
+Felhantering och loggning
+
+Automatisering (kan köras schemalagt)
+
+Testbarhet med unittest
+
+🔄 Så hänger det ihop
+
+Extract (hämtning)
+extract.py hämtar väderdata via ett API-anrop med hjälp av en API-nyckel från .env.
+
+Transform (rensa/strukturera)
+transform.py rensar och omformaterar rådata till ett enklare format.
+
+Load (spara)
+load.py sparar den transformerade datan i en SQLite-databas (weather_data.db).
+
+main.py styr hela flödet och loggar varje steg i etl.log.
+
+test_etl.py innehåller tester som verifierar att varje steg fungerar som förväntat.
+
+🧪 Hur man använder projektet
+
+Skapa en .env-fil med din API-nyckel:
+```
+API_KEY=din_api_nyckel
+```
+
+Installera beroenden:
+```
+pip install python-dotenv requests
+```
+
+Kör hela flödet:
+```
+python main.py
+```
+Kör tester:
+```
+python test_etl.py
+```
+
 ## 👨‍💻 Skapad av
 
-Student på **EC Utbildning – Python för Data Science** (Zakaria)
-
+Student på **EC Utbildning / Data Science** (Zakaria)
