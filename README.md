@@ -31,6 +31,8 @@ ETL-weather-pipeline/
 
 ```
 
+> ℹ️ Observera: `.env`, `etl.log` och `weather_data.db` är exkluderade från GitHub-repot via `.gitignore` för att skydda känsliga och lokala filer.
+
 ---
 
 ## ▶️ Så kör du programmet
