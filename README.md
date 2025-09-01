@@ -1,46 +1,97 @@
-# 🌦️ ETL Weather Pipeline
+# ☁️ ETL Weather Pipeline
 
-Detta är ett automatiserat ETL-flöde (Extract → Transform → Load) i Python som hämtar väderdata från OpenWeather API och sparar det i en SQLite-databas.
-
----
-
-## 🚀 Funktioner
-
-- 🔑 Hämtar väderdata från OpenWeatherMap med hjälp av API-nyckel (.env)
-- 🧹 Rensar och transformerar datan (t.ex. temperatur, luftfuktighet)
-- 🗃️ Sparar datan i en lokal SQLite-databas
-- 🪵 Loggning och felhantering
-- ✅ Separata testfiler för varje steg
+Ett automatiserat ETL-flöde i Python som hämtar väderdata från OpenWeatherMap, transformerar det och sparar det i en SQLite-databas.
 
 ---
 
-## 🗂️ Projektstruktur
+## 🔧 Funktioner
 
-etl_pipeline/
-├── init.py
-├── extract.py # Hämta data från API
-├── transform.py # Rensa/transformera data
-├── load.py # Spara till SQLite
+- 🔑 Läser API-nyckel från `.env`-fil
+- 🌐 Hämtar live-väderdata via OpenWeatherMap API
+- 🧹 Transformerar datan till ren form
+- 💾 Lagrar väderdata i SQLite-databas
+- 🪵 Loggar flödet i `etl.log`
+- ✅ Inkluderar automatiska tester med `unittest`
 
-main.py # Kör hela ETL-flödet
-test_env.py # Testar att API-nyckel kan läsas in
-test_fetch.py # Testar datahämtning
-test_transform.py # Testar datatransformation
-test_load.py # Testar att spara till databas
+---
+
+## 📂 Projektstruktur
+
+
+
+ETL-weather-pipeline/
+│
+├── main.py # Kör hela ETL-flödet
+├── test_etl.py # Kör automatiska tester
+├── .env # API-nyckel (exkluderas från GitHub)
+├── etl.log # Loggfil för flödet
+├── weather_data.db # SQLite databas
+│
+├── etl_pipeline/
+│ ├── extract.py # Hämtar väder från API
+│ ├── transform.py # Rensar/transformerar data
+│ └── load.py # Sparar i SQLite
 
 
 ---
 
-## ⚙️ Krav
+## ▶️ Så kör du programmet
 
-- Python 3.10+
-- `requests`
-- `python-dotenv`
-
-Installera beroenden:
-
+1. Klona repot:
 ```bash
-pip install requests python-dotenv
+git clone https://github.com/ditt-användarnamn/ETL-weather-pipeline.git
+
+
+API_KEY=din_api_nyckel
+
+pip install python-dotenv requests
+
+python main.py
+
+python test_etl.py
+
+Ran 3 tests in X.XXXs
+OK
+
+
 ```
 
-API_KEY=din_api_nyckel_här
+⏰ Automatisera körning (Windows Task Scheduler)
+
+Öppna Schemaläggaren i Windows
+
+Klicka "Skapa uppgift..."
+
+Gå till fliken Åtgärder → Klicka "Ny..."
+
+Fyll i:
+
+Program/script:
+python
+
+Argument:
+main.py
+
+Starta i:
+(Sökväg till din projektmapp, t.ex.)
+C:\Users\Player1\Desktop\ETL-weather-pipeline
+
+Välj t.ex. att den ska köras varje dag kl 09:00
+
+
+🔐 Säkerhet
+
+Glöm inte att .env och etl.log ska finnas i .gitignore så att API-nycklar aldrig laddas upp till GitHub!
+
+
+2025-09-01 16:18:08,749 | INFO | ETL-flöde startar...
+2025-09-01 16:18:08,807 | INFO | Data hämtad från API.
+2025-09-01 16:18:08,807 | INFO | Data transformerad: {...}
+2025-09-01 16:18:08,812 | INFO | Data sparad i databasen.
+2025-09-01 16:18:08,813 | INFO | ETL-flöde avslutat utan fel.
+
+👨‍💻 Skapad av
+
+Student på EC Utbildning – Python för Data Science (ZAKARIA)
+
+
