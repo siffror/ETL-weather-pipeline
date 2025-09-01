@@ -20,17 +20,18 @@ Ett automatiserat ETL-flöde i Python som hämtar väderdata från OpenWeatherMa
 
 
 ETL-weather-pipeline/
-│
-├── main.py # Kör hela ETL-flödet
-├── test_etl.py # Kör automatiska tester
-├── .env # API-nyckel (exkluderas från GitHub)
-├── etl.log # Loggfil för flödet
-├── weather_data.db # SQLite databas
-│
-├── etl_pipeline/
-│ ├── extract.py # Hämtar väder från API
-│ ├── transform.py # Rensar/transformerar data
-│ └── load.py # Sparar i SQLite
+├── main.py               # Kör hela ETL-flödet
+├── test_etl.py           # Kör automatiska tester
+├── .env                  # API-nyckel (exkluderas från GitHub)
+├── etl.log               # Loggfil för flödet
+├── weather_data.db       # SQLite databas
+├── README.md             # Dokumentation
+├── .gitignore            # Utesluter känsliga filer
+└── etl_pipeline/
+    ├── __init__.py       # Gör mappen till ett paket
+    ├── extract.py        # Hämtar väderdata från API
+    ├── transform.py      # Rensar/transformerar datan
+    └── load.py           # Sparar datan i SQLite
 
 
 ---
