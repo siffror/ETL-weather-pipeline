@@ -17,85 +17,94 @@ Ett automatiserat ETL-flöde i Python som hämtar väderdata från OpenWeatherMa
 
 ## 📂 Projektstruktur
 
-
 ```
-
 ETL-weather-pipeline/
-├── main.py                # Kör hela ETL-flödet
-├── test_etl.py            # Kör automatiska tester
-├── .env                   # API-nyckel (exkluderas från GitHub)
-├── etl.log                # Loggfil för flödet
-├── weather_data.db        # SQLite-databas
-├── .gitignore             # Utesluter känsliga filer
-├── README.md              # Dokumentation
+├── main.py               # Kör hela ETL-flödet
+├── test_etl.py           # Kör automatiska tester
+├── .env                  # API-nyckel (exkluderas från GitHub)
+├── etl.log               # Loggfil för flödet
+├── weather_data.db       # SQLite-databas
+├── .gitignore            # Utesluter känsliga filer
+├── README.md             # Dokumentation
 └── etl_pipeline/
-    ├── __init__.py        # Gör mappen till ett paket
-    ├── extract.py         # Hämtar väderdata från API
-    ├── transform.py       # Rensar/transformerar datan
-    └── load.py            # Sparar datan i SQLite
-
+    ├── __init__.py       # Gör mappen till ett paket
+    ├── extract.py        # Hämtar väderdata från API
+    ├── transform.py      # Rensar/transformerar datan
+    └── load.py           # Sparar datan i SQLite
 ```
-
 
 ---
 
 ## ▶️ Så kör du programmet
 
-1. Klona repot:
+### 1. Klona repot
+
 ```bash
 git clone https://github.com/ditt-användarnamn/ETL-weather-pipeline.git
-
-
-API_KEY=din_api_nyckel
-
-pip install python-dotenv requests
-
-python main.py
-
-python test_etl.py
-
-Ran 3 tests in X.XXXs
-OK
-
-
+cd ETL-weather-pipeline
 ```
 
-⏰ Automatisera körning (Windows Task Scheduler)
+### 2. Skapa `.env`-fil
 
-Öppna Schemaläggaren i Windows
+```env
+API_KEY=din_api_nyckel
+```
 
-Klicka "Skapa uppgift..."
+### 3. Installera beroenden
 
-Gå till fliken Åtgärder → Klicka "Ny..."
+```bash
+pip install python-dotenv requests
+```
 
-Fyll i:
+### 4. Kör ETL-flödet
 
-Program/script:
-python
+```bash
+python main.py
+```
 
-Argument:
-main.py
+### 5. Kör tester
 
-Starta i:
-(Sökväg till din projektmapp, t.ex.)
-C:\Users\Player1\Desktop\ETL-weather-pipeline
+```bash
+python test_etl.py
+```
 
-Välj t.ex. att den ska köras varje dag kl 09:00
+---
 
+## ⏰ Automatisera körning (Windows Task Scheduler)
 
-🔐 Säkerhet
+1. Öppna **Schemaläggaren** i Windows  
+2. Klicka **"Skapa uppgift..."**  
+3. Gå till fliken **"Åtgärder"** → Klicka **"Ny..."**
 
-Glöm inte att .env och etl.log ska finnas i .gitignore så att API-nycklar aldrig laddas upp till GitHub!
+Fyll i följande:
 
+- **Program/script:** `python`  
+- **Argument:** `main.py`  
+- **Starta i:** `C:\Users\Player1\Desktop\ETL-weather-pipeline`  
+- **Tidpunkt:** t.ex. varje dag kl 09:00
 
+---
+
+## 🔐 Säkerhet
+
+- Lägg `.env` och `etl.log` i `.gitignore`  
+- ✅ Så att API-nycklar aldrig laddas upp till GitHub!
+
+---
+
+## 🧪 Exempel på logg
+
+```
 2025-09-01 16:18:08,749 | INFO | ETL-flöde startar...
 2025-09-01 16:18:08,807 | INFO | Data hämtad från API.
 2025-09-01 16:18:08,807 | INFO | Data transformerad: {...}
 2025-09-01 16:18:08,812 | INFO | Data sparad i databasen.
 2025-09-01 16:18:08,813 | INFO | ETL-flöde avslutat utan fel.
+```
 
-👨‍💻 Skapad av
+---
 
-Student på EC Utbildning – Python för Data Science (ZAKARIA)
+## 👨‍💻 Skapad av
 
+Student på **EC Utbildning – Python för Data Science** (Zakaria)
 
