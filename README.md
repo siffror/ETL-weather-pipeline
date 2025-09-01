@@ -82,7 +82,7 @@ Fyll i följande:
 
 - **Program/script:** `python`  
 - **Argument:** `main.py`  
-- **Starta i:** `C:\Users\Player1\Desktop\ETL-weather-pipeline`  (eller där din projektmapp ligger)
+- **Starta i:** `C:\Users\...`  ( där din projektmapp ligger)
 - **Tidpunkt:** t.ex. varje dag kl 09:00
 
 ---
