@@ -42,9 +42,9 @@ ETL-weather-pipeline/
 
 ### 1. Klona repot
 
-```bash
+
 git clone https://github.com/siffror/ETL-weather-pipeline.git
-```
+
 
 ### 2. Skapa `.env`-fil
 
@@ -82,7 +82,7 @@ Fyll i följande:
 
 - **Program/script:** `python`  
 - **Argument:** `main.py`  
-- **Starta i:** `C:\Users\Player1\Desktop\ETL-weather-pipeline`  
+- **Starta i:** `C:\Users\Player1\Desktop\ETL-weather-pipeline`  (eller där din projektmapp ligger)
 - **Tidpunkt:** t.ex. varje dag kl 09:00
 
 ---
