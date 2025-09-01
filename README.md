@@ -1,3 +1,6 @@
+![Python version](https://img.shields.io/badge/Python-3.12-blue)
+
+
 # ☁️ ETL Weather Pipeline
 
 Ett automatiserat ETL-flöde i Python som hämtar väderdata från OpenWeatherMap, transformerar det och sparar det i en SQLite-databas.
