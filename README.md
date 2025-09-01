@@ -18,6 +18,7 @@ Ett automatiserat ETL-flöde i Python som hämtar väderdata från OpenWeatherMa
 ## 📂 Projektstruktur
 
 
+```
 
 ETL-weather-pipeline/
 ├── main.py                # Kör hela ETL-flödet
@@ -33,6 +34,7 @@ ETL-weather-pipeline/
     ├── transform.py       # Rensar/transformerar datan
     └── load.py            # Sparar datan i SQLite
 
+```
 
 
 ---
